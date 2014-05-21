@@ -1,13 +1,14 @@
 <?php
 /**
  * Plugin Name: Threaded Comment Feed Enhancer
- * Plugin URI:  http://torstenlandsiedel.de
- * Text Domain: threaded-comment-feed-enhancer
  * Description: Enhances the threaded comments feed
  * Version:     1.2.0
  * Author:      Torstenlandsiedel
  * Author URI:  http://torstenlandsiedel.de
+ * Plugin URI:  http://torstenlandsiedel.de
+ * Text Domain: threaded-comment-feed-enhancer
  * License:     GPLv3
+ * License URI: http://www.gnu.org/licenses/gpl-3.0
  */
 
 /* Thanks to Dominik Schilling (@ocean90) and Thomas Scholz (@toscho) for many hints */
