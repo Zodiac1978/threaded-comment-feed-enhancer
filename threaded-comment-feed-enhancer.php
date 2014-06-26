@@ -13,6 +13,14 @@
 
 /* Thanks to Dominik Schilling (@ocean90) and Thomas Scholz (@toscho) for many hints */
 
+/*
+ToDo:
+- Mail Notifications
+-- $notify_message = apply_filters( 'comment_notification_text', $notify_message, $comment_id );
+-- $subject = apply_filters( 'comment_notification_subject', $subject, $comment_id );
+- Add option: note in title or in body
+*/
+
 // Exit if accessed directly
 if ( ! defined( 'ABSPATH' ) ) exit;
 
