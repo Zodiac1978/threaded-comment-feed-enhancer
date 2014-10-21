@@ -3,7 +3,7 @@
  * Plugin Name: Threaded Comment Feed Enhancer
  * Description: Enhances the threaded comments feed
  * Version:     1.2.0
- * Author:      Torstenlandsiedel
+ * Author:      Torsten Landsiedel
  * Author URI:  http://torstenlandsiedel.de
  * Plugin URI:  http://torstenlandsiedel.de
  * Text Domain: threaded-comment-feed-enhancer
