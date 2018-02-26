@@ -13,10 +13,6 @@
 
 /* Thanks to Dominik Schilling (@ocean90) and Thomas Scholz (@toscho) for many hints */
 
-/*
-- Add option: note in title or in body?
-*/
-
 // Exit if accessed directly
 if ( ! defined( 'ABSPATH' ) ) exit;
 
@@ -37,10 +33,11 @@ function threaded_comment_feed_body_enhancer( $comment_text ) {
     return $comment_text; 
   
   $parent_comment_object = get_comment( $comment_object->comment_parent );
-  $parent_comment_link = get_comment_link ( $parent_comment_object->comment_ID );
-  $parent_comment_author = $parent_comment_object->comment_author;
+  $parent_comment_link = esc_url( get_comment_link ( $parent_comment_object->comment_ID ));
+  $parent_comment_author = esc_html( $parent_comment_object->comment_author );
   $parent_comment_content = $comment_object->comment_content;
-  $message = sprintf( __( '(This is a reply to the <a href=\'%s\'>comment</a> from %s.)', 'threaded-comment-feed-enhancer' ), esc_url( $parent_comment_link ), esc_html( $parent_comment_author ) );
+  
+  $message = sprintf( __( 'In reply to %s.', 'threaded-comment-feed-enhancer' ), '<a href="' . $parent_comment_link . '">' . $parent_comment_author . '</a>'
   $message .= '<br><br>';
   $message .= '<blockquote>' . $parent_comment_object->comment_content . '</blockquote>';
   $message .= '<br><br>';
