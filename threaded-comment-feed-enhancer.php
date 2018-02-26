@@ -14,11 +14,7 @@
 /* Thanks to Dominik Schilling (@ocean90) and Thomas Scholz (@toscho) for many hints */
 
 /*
-ToDo:
-- Mail Notifications
--- $notify_message = apply_filters( 'comment_notification_text', $notify_message, $comment_id );
--- $subject = apply_filters( 'comment_notification_subject', $subject, $comment_id );
-- Add option: note in title or in body
+- Add option: note in title or in body?
 */
 
 // Exit if accessed directly
@@ -27,12 +23,9 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 // Load Translation
 function threaded_comment_feed_enhancer_init() {
   load_plugin_textdomain( 'threaded-comment-feed-enhancer', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
-  // * Domain Path: /languages
-  // load_plugin_textdomain( 'threaded-comment-feed-enhancer', false );
 }
-//add_action('plugins_loaded', 'threaded_comment_feed_enhancer_init');
-add_action('init', 'threaded_comment_feed_enhancer_init');
-
+// add_action('plugins_loaded', 'threaded_comment_feed_enhancer_init');
+add_action( 'init', 'threaded_comment_feed_enhancer_init' );
 
 // Add info text in comment body if there is a threaded comment 
 function threaded_comment_feed_body_enhancer( $comment_text ) {
@@ -60,6 +53,3 @@ if ( ( ! is_admin() ) && ( get_option( 'thread_comments' ) ) && ( is_comment_fee
   add_filter ('comment_text', 'threaded_comment_feed_body_enhancer');
   add_filter ('comment_text_rss', 'threaded_comment_feed_body_enhancer');
 }
-
-
-?>
